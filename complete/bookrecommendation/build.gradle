@@ -25,6 +25,7 @@ repositories {
     mavenLocal()
     mavenCentral()
     maven { url "https://jcenter.bintray.com" }
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
 }
 
 dependencyManagement {
@@ -57,10 +58,6 @@ dependencies {
     //tag::jaeger[]
     compile 'io.jaegertracing:jaeger-core:0.27.0'
     //end::jaeger[]
-
-    //tag::hamcrest[]
-    testCompile "org.hamcrest:hamcrest-all:$hamcrestAllVersion"
-    //end::hamcrest[]
 }
 
 shadowJar {

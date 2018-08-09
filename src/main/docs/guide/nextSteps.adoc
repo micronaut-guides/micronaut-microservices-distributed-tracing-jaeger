@@ -1,1 +1,7 @@
-Read more about https://docs.micronaut.io/snapshot/guide/index.html#jaeger[Tracing with Jaeger] inside Micronaut.
+As you have seen in this tutorial, without any annotations you get distributing tracing up-and-running fast with Micronaut.
+We introduce the `@SpanTag` annotation. There are other annotations which will give you more flexibility:
+
+- `@NewSpan` annotation will create a new span, wrapping the method call or reactive type.
+- `@ContinueSpan` annotation will continue an existing span, wrapping the method call or reactive type.
+
+Make sure to read more about https://docs.micronaut.io/snapshot/guide/index.html#jaeger[Tracing with Jaeger] inside Micronaut.

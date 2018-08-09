@@ -12,4 +12,6 @@ The `bookcatalogue` service consumes endpoints exposed by the other services. Th
 
 image::flow.svg[]
 
+A request to `bookrecommendation` (`http://localhost:8080/books`) triggers several requests through our microservices mesh.
+
 include::{commondir}/common-annotationprocessors.adoc[]

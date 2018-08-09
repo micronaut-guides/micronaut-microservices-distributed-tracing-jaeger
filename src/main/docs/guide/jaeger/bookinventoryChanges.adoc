@@ -35,9 +35,9 @@ include::{sourceDir}/bookinventory/src/main/resources/application.yml[tag=jaeger
 
 <1> Trace 100% of requests.
 
-Previous configuration registers a Micronaut app with Consul with minimal configuration. Discover a more complete list of Configuration options at https://docs.micronaut.io/snapshot/api/io/micronaut/discovery/consul/ConsulConfiguration.html[ConsulConfiguration].
+In production, you will probably want to small percentage of the requests. In order to keep guide easy, we set it to trace 100%.
 
-Disable consul registration in tests:
+Disable distributed tracing in tests:
 
 [source,yaml]
 .bookinventory/src/main/resources/application-test.yml
@@ -45,7 +45,7 @@ Disable consul registration in tests:
 include::{sourceDir}/bookinventory/src/main/resources/application-test.yml[tag=jaeger]
 ----
 
-Annotate `BookController` method with `@ContinueSpan` and the method parameter with `@SpanTag`:
+Annotate the method parameter with `@SpanTag`:
 
 [source,java]
 .bookinventory/src/main/java/example/micronaut/bookinventory/BooksController.java
@@ -53,6 +53,5 @@ Annotate `BookController` method with `@ContinueSpan` and the method parameter w
 include::{sourceDir}/bookinventory/src/main/java/example/micronaut/bookinventory/BooksController.java[]
 ----
 
-<1> The `@ContinueSpan` annotation will continue an existing span, wrapping the method call or reactive type.
 <2> The `@SpanTag` annotation can be used on method arguments to include the value of each argument within a Span's tags.
 

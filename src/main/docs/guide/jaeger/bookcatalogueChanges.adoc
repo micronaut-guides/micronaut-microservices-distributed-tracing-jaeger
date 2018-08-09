@@ -35,9 +35,9 @@ include::{sourceDir}/bookcatalogue/src/main/resources/application.yml[tag=jaeger
 
 <1> Trace 100% of requests.
 
-Previous configuration registers a Micronaut app with Consul with minimal configuration. Discover a more complete list of Configuration options at https://docs.micronaut.io/snapshot/api/io/micronaut/discovery/consul/ConsulConfiguration.html[ConsulConfiguration].
+In production, you will probably want to small percentage of the requests. In order to keep guide easy, we set it to trace 100%.
 
-Disable consul registration in tests:
+Disable distributed tracing in tests:
 
 [source,yaml]
 .bookcatalogue/src/main/resources/application-test.yml
