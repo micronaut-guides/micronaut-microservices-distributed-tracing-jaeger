@@ -45,7 +45,7 @@ Disable distributed tracing in tests:
 include::{sourceDir}/bookinventory/src/main/resources/application-test.yml[tag=jaeger]
 ----
 
-Annotate the method parameter with `@SpanTag`:
+Annotate the method with `@ContinueSpan` and the parameter with `@SpanTag`:
 
 [source,java]
 .bookinventory/src/main/java/example/micronaut/bookinventory/BooksController.java
@@ -53,5 +53,7 @@ Annotate the method parameter with `@SpanTag`:
 include::{sourceDir}/bookinventory/src/main/java/example/micronaut/bookinventory/BooksController.java[]
 ----
 
-<2> The `@SpanTag` annotation can be used on method arguments to include the value of each argument within a Span's tags.
+<1> The `@ContinueSpan` annotation will continue an existing span, wrapping the method call or reactive type.
+<2> The `@SpanTag` annotation can be used on method arguments to include the value of each argument within a Span's tags. When you use `@SpanTag` you need
+either to annotate the method with `@NewSpan` or `@ContinueSpan``
 

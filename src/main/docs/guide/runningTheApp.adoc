@@ -58,6 +58,8 @@ In the previous image, you can see that:
 - Whenever a Micronaut HTTP client executes a new network request, it creates a new Span.
 - Whenever a Micronaut Server receives a request, it creates a new Span.
 
+The `stock.isbn` tags that we configured with `@SpanTag` are present.
+
 Moreover, you can see the requests to `bookinventory` are done in paralell.
 
 
