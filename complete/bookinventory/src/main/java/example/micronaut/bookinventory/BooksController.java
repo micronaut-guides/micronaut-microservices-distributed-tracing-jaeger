@@ -18,12 +18,7 @@ public class BooksController {
     @Get("/stock/{isbn}")
     @ContinueSpan // <1>
     public Boolean stock(@SpanTag("stock.isbn") @NotBlank String isbn) { // <2>
-        Optional<BookInventory> bookInventoryOptional = bookInventoryByIsbn(isbn);
-        if (!bookInventoryOptional.isPresent()) {
-            return null;
-        }
-        BookInventory bookInventory = bookInventoryOptional.get();
-        return bookInventory.getStock() > 0 ? Boolean.TRUE : Boolean.FALSE;
+        return bookInventoryByIsbn(isbn).map(bi -> bi.getStock() > 0 ? Boolean.TRUE : Boolean.FALSE).orElse(null);
     }
 
     private Optional<BookInventory> bookInventoryByIsbn(String isbn) {
