@@ -25,7 +25,6 @@ repositories {
     mavenLocal()
     mavenCentral()
     maven { url "https://jcenter.bintray.com" }
-    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
 }
 
 dependencyManagement {
@@ -56,7 +55,7 @@ dependencies {
     //end::tracing[]
 
     //tag::jaeger[]
-    compile 'io.jaegertracing:jaeger-core:0.27.0'
+    compile 'io.jaegertracing:jaeger-thrift:0.31.0'
     //end::jaeger[]
 }
 
