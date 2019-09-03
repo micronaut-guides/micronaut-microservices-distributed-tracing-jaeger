@@ -61,6 +61,6 @@ In the previous image, you can see that:
 
 The `stock.isbn` tags that we configured with `@SpanTag` are present.
 
-Moreover, you can see the requests to `bookinventory` are done in paralell.
+Moreover, you can see the requests to `bookinventory` are done in parallel.
 
 
