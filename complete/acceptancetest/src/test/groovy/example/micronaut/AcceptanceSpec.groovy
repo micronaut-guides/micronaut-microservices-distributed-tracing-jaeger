@@ -40,7 +40,6 @@ class AcceptanceSpec extends Specification {
         BlockingHttpClient catalogueClient = HttpClient.create(new URL(CATALOGUE_URL)).toBlocking()
         return isUp(recommendationClient, RECOMMENDATION_URL) && isUp(catalogueClient, CATALOGUE_URL) && isUp(inventoryClient, INVENTORY_URL)
     })
-    @Ignore //TODO delete Ignore
     def "verifies three microservices collaborate together"() {
         when:
         List<BookRecommendation> books = client.retrieve(HttpRequest.GET('/books'), Argument.listOf(BookRecommendation))
